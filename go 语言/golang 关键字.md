@@ -153,3 +153,36 @@ v, ok = <-ch
 fmt.Println(v, ok) // 0 false （空且关闭）
 ```
 
+### fallthrough
+
+放在 switch case 中的 case 里，进行“向下贯穿”，即，运行完这个 case 之后，继续强制执行下一个 case 的语句，不进行条件判断  
+
+**使用规则**
+
+必须放在 case 的最后一行
+
+```go
+case 2:
+	fallthrough
+	fmt.Println("two") // ❌ 错误
+```
+
+一次只往下一个 case，不能跨越多个 case，可以有连续的 fallthrough 进行连续执行
+
+```go
+grade := "A"
+switch grade {
+case "A":
+    fmt.Println("Excellent")
+    fallthrough
+case "B":
+    fmt.Println("Good")
+    fallthrough
+case "C":
+    fmt.Println("Pass")
+default:
+    fmt.Println("Try harder")
+}
+// 结果是Excellent， Good， Pass
+```
+
