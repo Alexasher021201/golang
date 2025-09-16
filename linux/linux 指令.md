@@ -39,9 +39,9 @@
 - rm -rf tmp/                -rf：强制（慎用）     强制删除目录
 - rm -i *.tmp                -i：删除前确认            交互式删除
 
-**Find**
+**find**
 
-- Find /home -name "*.txt" -type f        在 /home 下查找所有后缀为.txt 的文件
+- find /home -name "*.txt" -type f        在 /home 下查找所有后缀为.txt 的文件
 
 ### 文件内容操作
 
@@ -97,7 +97,7 @@
 - ps aux | grep “alex”      筛选出包含 alex 字段的进程行
 - ps -ef --forest              显示进程树
 
-**Free**
+**free**
 
 - free -h               -h：自动转化单位，变成人类可读形式
 
@@ -194,8 +194,8 @@
 
 **zip**
 
-- zip -r out.zip dir/       压缩
-- unzip file.zip              解压，-r：递归压缩目录
+- zip -r out.zip dir/       压缩，-r：递归压缩目录
+- unzip file.zip              解压
 
 ### 进程与系统控制
 
